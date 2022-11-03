@@ -1,5 +1,10 @@
 # 2. Currency Converter
 
+So far I've got a lot of the CSS done with absolute positioning, which I think is pretty dang fragile. I had the conversion API working, at least fetching the info, but not displaying it yet. I'm not 100% decided if I intend to continue going with react or not. I might reconfigure the whole thing up with vanillaJS. 
+
+The bulk of the application will be found in App.js
+
+# Requirements #
 Using much of what you created in Project 1, create a clone of XE Currency ExchangeLinks to an external site.. This project will be extended into Project Three. There is a lot in the designs that are meant for that extended version. Please create the html for it all but you do not need to worry about the functionality for anything but the currency convertor.
 
 Requirements
