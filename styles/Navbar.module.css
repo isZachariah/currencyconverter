@@ -1,0 +1,67 @@
+.background {
+    position: absolute;
+    z-index: -1;
+    height: 387px;
+    top: 0;
+    background: linear-gradient(180deg, #02208A 0%, rgba(2, 32, 138, 0.83) 100%);
+}
+
+.navigator {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1rem;
+    color: #FFFFFF;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-family: "Montserrat", serif;
+}
+
+.brand {
+    position: relative;
+    width: 221px;
+    height: 79px;
+    left: 24px;
+    top: 0;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 59px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.link {
+    position: relative;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 25px;
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+.register {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 119px;
+    height: 49px;
+    background: #0085FF;
+    border-radius: 10px;
+    top: 15px;
+}
+
+.register:hover {
+    cursor: pointer;
+}
