@@ -1,39 +1,37 @@
 import Link from 'next/link'
-import styles from '../styles/Navbar.module.css';
+// import styles from '../styles/Navbar.module.css';
 import "@fontsource/montserrat";
+import Background from "./Background";
 
-/** NAVBAR
- *       <section className="header">
- *         <nav>
- *           <ul>
- *             <li className="brand">Xe Clone</li>
- *             <li className="send">Send Money</li>
- *             <li className="convert">Converter</li>
- *             <li className="api">Currency API</li>
- *             <li className="tools">Tools</li>
- *             <li className="signIn">Sign In</li>
- *             <li className="register">Register</li>
- *           </ul>
- *           <div className="registerButton"></div>
- *         </nav>
- */
 const Navbar = () => {
     return (
-        <div className={styles.background}>
-            <nav className={styles.navigator}>
-                <a className={styles.brand}>Xe Clone</a>
-                <div/>
-                <Link href={''} className={styles.link}>Send Money</Link>
-                <Link href={''} className={styles.link}>Converter</Link>
-                <Link href={''} className={styles.link}>Currency API</Link>
-                <Link href={''} className={styles.link}>Tools</Link>
-                <div />
-                <a className={styles.link}>Sign In</a>
-                <div className={styles.register}>
-                    <Link href={''} className={styles.link}>Register</Link>
+        <header className="bg-gradient-to-t h-96 from-blue-600 to-blue-900 text-white mx-auto px-0 max-w-full flex flex-col">
+            <div className='flex flex-row justify-between align-middle px-12 py-6'>
+                <div>
+                    <p className='text-4xl'>Xe Clone</p>
                 </div>
-            </nav>
-        </div>
+                <nav className='flex flex-col justify-center align-center'>
+                    <ul className='flex flex-row justify-between align-middle m-0 p-0 gap-x-12'>
+                        <li>
+                            <Link href={''} className='text-lg hover:text-gray-300'>Send Money</Link>
+                        </li>
+                        <li>
+                            <Link href={''} className='text-lg hover:text-gray-300'>Converter</Link>
+                        </li>
+                        <li>
+                            <Link href={''} className='text-lg hover:text-gray-300'>Currency API</Link>
+                        </li>
+                        <li>
+                            <Link href={''} className='text-lg hover:text-gray-300'>Tools</Link>
+                        </li>
+                    </ul>
+                </nav>
+                    <div className='flex flex-row justify-between align-center m-0 p-0 gap-x-4'>
+                        <button >Sign In</button>
+                        <button className='bg-sky-500 rounded-md px-4 py-2 hover:bg-gray-300 hover:text-blue-900'>Register</button>
+                    </div>
+            </div>
+        </header>
     )
 }
 
