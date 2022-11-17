@@ -17,7 +17,7 @@ export const TabsRow: FC<TabsRowProps> = ({ tabs }) => {
 
     return (
         <>
-            <ul className='flex flex-row justify-between align-middle rounded-lg bg-gray-100 h-16'>
+            <ul className='flex flex-row justify-between align-middle rounded-lg bg-gray-100 h-16 w-full'>
                 <li style={{ background: tabs.convert ? 'white' : '#ECEFF4' }}
                     className='flex flex-row justify-center align-middle text-[#02208A] hover:bg-gray-300 rounded-t-lg hover:text-sky-500 cursor-pointer basis-1/4'>
                     <Link href={{ pathname: '/', query: { tab: '1' }}} className='m-auto w-fit h-fit justify-center align-middle rounded-t-lg' >
