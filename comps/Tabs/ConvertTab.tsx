@@ -2,6 +2,8 @@ import {FC, useState} from "react";
 import {Convert, options} from "./Convert";
 import {Table} from "./Table";
 
+
+
 type ConvertProps = {
 
 }
@@ -14,7 +16,7 @@ export const ConvertTab: FC<ConvertProps> = (props) => {
 
     return (
         <div className={''}>
-            <div>
+            <div className={'bg-white mx-auto rounded-lg flex flex-col shadow-lg'}>
                 {
                     <Convert  base={base} setBase={setBase}
                               target={target} setTarget={setTarget}
@@ -24,7 +26,7 @@ export const ConvertTab: FC<ConvertProps> = (props) => {
                 }
             </div>
             <div>
-                <div className='w-3/5 mx-auto grid grid-cols-2 justify-center align-middle'>
+                <div className='w-4/5 mx-auto grid grid-cols-2 justify-center align-middle rounded-b-xl'>
                     <div>
                         {
                             converting && <Table

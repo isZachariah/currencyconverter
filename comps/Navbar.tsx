@@ -1,7 +1,6 @@
 import Link from 'next/link'
-// import styles from '../styles/Navbar.module.css';
 import "@fontsource/montserrat";
-import Background from "./Background";
+
 
 const Navbar = () => {
     return (

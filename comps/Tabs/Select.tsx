@@ -1,13 +1,6 @@
 import {useState} from "react";
-import {CurrencyFlag} from "react-currency-flags/dist/components";
 import styles from '../../styles/select.module.css';
 import '/node_modules/currency-flags/dist/currency-flags.css';
-
-interface CFProps {
-    currency: string
-}
-
-const CurrencyFlagComp = ({currency}: CFProps) => <CurrencyFlag currency={currency} size={'sm'} />
 
 
 export type SelectOption = {
