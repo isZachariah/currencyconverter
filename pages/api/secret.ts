@@ -14,7 +14,8 @@ export default function handler(
     // res.status(200).json({ name: 'John Doe' })
 }
 
-const APIKEY = '2029506bcdbfb303b4b31f63'
+
+const APIKEY = ''
 const APIRequest = (from: string | undefined, to: string | undefined, amount: string | undefined) => ((
     typeof from === 'string' && typeof to === 'string' && typeof amount === 'string'
         ? `https://v6.exchangerate-api.com/v6/${APIKEY}/pair/${from}/${to}/${amount}`
