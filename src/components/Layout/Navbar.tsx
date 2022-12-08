@@ -7,21 +7,21 @@ const Navbar = () => {
         <header className="bg-gradient-to-t h-96 from-blue-600 to-blue-900 text-white mx-auto px-0 max-w-full flex flex-col">
             <div className='flex flex-row justify-between align-middle px-12 py-6'>
                 <div>
-                    <p className='text-4xl'>Xe Clone</p>
+                    <Link href={'/'} className='text-4xl'>Xe Clone</Link>
                 </div>
                 <nav className='flex flex-col justify-center align-center'>
                     <ul className='flex flex-row justify-between align-middle m-0 p-0 gap-x-12'>
                         <li>
-                            <Link href={''} className='text-lg hover:text-gray-300'>Send Money</Link>
+                            <Link href={'currency?tab=send'} className='text-lg hover:text-gray-300'>Send Money</Link>
                         </li>
                         <li>
-                            <Link href={''} className='text-lg hover:text-gray-300'>Converter</Link>
+                            <Link href={'/currency?tab=convert'} className='text-lg hover:text-gray-300'>Converter</Link>
                         </li>
                         <li>
-                            <Link href={''} className='text-lg hover:text-gray-300'>Currency API</Link>
+                            <Link href={'/currency-api'} className='text-lg hover:text-gray-300'>Currency API</Link>
                         </li>
                         <li>
-                            <Link href={''} className='text-lg hover:text-gray-300'>Tools</Link>
+                            <Link href={'/tools'} className='text-lg hover:text-gray-300'>Tools</Link>
                         </li>
                     </ul>
                 </nav>

@@ -1,9 +1,11 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRightLeft} from "@fortawesome/free-solid-svg-icons";
-import {FC, useState} from "react";
-import {Select, SelectOption} from "./Select";
+import {useState} from "react";
+import {Select} from "../Inputs/Select";
 import {APIRequest} from "../../pages/api/secret";
-
+import { NumberInput } from "../Inputs/NumberInput";
+import type {FC} from "react";
+import type {SelectOption} from "../Inputs/Select";
 
 
 type ConvertProps = {
@@ -25,11 +27,8 @@ export const Convert: FC<ConvertProps> = ({base, setBase, target, setTarget, con
 
     const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        // e.stopPropagation()
         async function fetchConversion() {
             const data = await fetch(APIRequest(base?.value, target?.value, amount))
-            // console.log(data)
-            // console.log(data.json())
             return await data.json()
         }
         fetchConversion()
@@ -40,9 +39,14 @@ export const Convert: FC<ConvertProps> = ({base, setBase, target, setTarget, con
                 setConversionResult(conversion_result)
                 setConverting(true)
             }).catch((err) => {
-                console.log(err)
+            console.log(err)
 
         })
+    }
+
+    function amountOnChange(amount: string) {
+        setConverting(false)
+        setAmount(amount)
     }
 
     function swap(e: React.MouseEvent<HTMLButtonElement>) {
@@ -57,22 +61,9 @@ export const Convert: FC<ConvertProps> = ({base, setBase, target, setTarget, con
         <div className='flex flex-col justify-center align-middle p-4'>
             <form className='flex flex-col justify-center align-middle'>
                 <div className='flex flex-row justify-between align-middle flex-wrap gap-2 my-12'>
+                    <NumberInput value={amount} onChange={amountOnChange} id={'amount'} label={'Amount'}/>
                     <div className='flex flex-col align-left justify-end'>
-                        <label className=''>Amount</label>
-                        <input
-                            type={"number"}
-                            className='input[type=number] h-12 rounded border-gray-700 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
-                            placeholder={'$1.00'}
-                            value={amount}
-                            onChange={(e) => {
-                                setConverting(false)
-                                setAmount(e.target.value)
-                            }}
-
-                        />
-                    </div>
-                    <div className='flex flex-col align-left justify-end'>
-                        <label className=''>From</label>
+                        <label className='' htmlFor={'from'}>From</label>
                         <Select
                             options={options}
                             value={base}
@@ -87,12 +78,12 @@ export const Convert: FC<ConvertProps> = ({base, setBase, target, setTarget, con
                             className='shadow-sm rounded-full border border-gray-300 h-12 w-12 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                             onClick={(e) => swap(e)}
                         >
-                            <FontAwesomeIcon className='text-[#00a2e0]' icon={faRightLeft} />
+                            <FontAwesomeIcon className='text-[#00a2e0] h-4 w-4 justify-center text-center align-middle m-auto' icon={faRightLeft} />
                         </button>
 
                     </div>
                     <div className='flex flex-col align-left justify-end'>
-                        <label className=''>To</label>
+                        <label className='' htmlFor={'to'}>To</label>
                         <Select
                             options={options}
                             value={target}
@@ -125,15 +116,15 @@ export const Convert: FC<ConvertProps> = ({base, setBase, target, setTarget, con
 }
 
 export const options = [
-    { value: 'AUD', label: 'Australian Dollar', symbol: '$'},
-    { value: 'CAD', label: 'Canadian Dollar', symbol: '$'},
-    { value: 'CLP', label: 'Chilean Peso', symbol: '$'},
-    { value: 'CNY', label: 'Chinese Yuan', symbol: '¥'},
-    { value: 'EUR', label: 'Euro', symbol: '€'},
+    { value: 'AUD', label: 'Australian Dollar',      symbol: '$'},
+    { value: 'CAD', label: 'Canadian Dollar',        symbol: '$'},
+    { value: 'CLP', label: 'Chilean Peso',           symbol: '$'},
+    { value: 'CNY', label: 'Chinese Yuan',           symbol: '¥'},
+    { value: 'EUR', label: 'Euro',                   symbol: '€'},
     { value: 'GBP', label: 'British Pound Sterling', symbol: '£'},
-    { value: 'INR', label: 'Indian Rupee', symbol: '₹'},
-    { value: 'JPY', label: 'Japanese Yen', symbol: '¥'},
-    { value: 'RUB', label: 'Russian Ruble', symbol: '₽'},
-    { value: 'USD', label: 'United States Dollar', symbol: '$'},
-    { value: 'ZAR', label: 'South African Rand', symbol: 'R'},
+    { value: 'INR', label: 'Indian Rupee',           symbol: '₹'},
+    { value: 'JPY', label: 'Japanese Yen',           symbol: '¥'},
+    { value: 'RUB', label: 'Russian Ruble',          symbol: '₽'},
+    { value: 'USD', label: 'United States Dollar',   symbol: '$'},
+    { value: 'ZAR', label: 'South African Rand',     symbol: 'R'},
 ]

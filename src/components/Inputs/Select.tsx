@@ -35,7 +35,8 @@ export function Select({value, onChange, options}: SelectProps) {
     return (
         <div
             onBlur={() => setIsOpen(false)}
-            onClick={() => setIsOpen(prev => !prev)} tabIndex={0} className={`${styles.container} rounded border-gray-700 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50`}>
+            onClick={() => setIsOpen(prev => !prev)} tabIndex={0}
+            className={`${styles.container} rounded border-gray-700 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50`}>
             <div className={'flex flex-row gap-1 w-full gap-1 '}>
 
                 <div className={`currency-flag currency-flag-${value?.value.toLowerCase()} text-center m-auto`}/>
@@ -61,7 +62,8 @@ export function Select({value, onChange, options}: SelectProps) {
                             setIsOpen(false)
                         }}
                         onMouseEnter={() => setHighlightedIndex(index)}
-                        key={option.value} className={`${styles.option} ${isOptionSelected(option) ? styles.selected : ''}`}>{
+                        key={option.value}
+                        className={`${styles.option} ${isOptionSelected(option) ? styles.selected : ''}`}>{
                         <div className={'flex flex-row gap-1 w-full gap-1'}>
                             <div className={`currency-flag currency-flag-${option.value.toLowerCase()} my-auto`}></div>
                             <span>{option.label}</span>

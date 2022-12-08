@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Select} from "./Select";
+import {Select} from "../Inputs/Select";
 
 type SendProps = {
 

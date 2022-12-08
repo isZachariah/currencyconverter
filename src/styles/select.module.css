@@ -11,11 +11,6 @@
     outline: none;
 }
 
-
-/*.container:focus {*/
-/*    border-color: hsl(200, 100%, 50%);*/
-/*}*/
-
 .value {
     flex-grow: 1;
     display: flex;

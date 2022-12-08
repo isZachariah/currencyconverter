@@ -1,7 +1,7 @@
 ## XE Clone
 I decided to take your advice and make this project with Nextjs and I have found it to be really really fun. I've got the tabs working (not totally implemented yet, but working) and I managed to use the API you suggested in the project description to do my conversions. I was stoked to figure out how to add the little flags (I ended up creating my own select/option). This project has been a blast!
 
-2. Currency Converter
+2. Currency Currency
    So far I've got a lot of the CSS done with absolute positioning, which I think is pretty dang fragile. I had the conversion API working, at least fetching the info, but not displaying it yet. I'm not 100% decided if I intend to continue going with react or not. I might reconfigure the whole thing up with vanillaJS.
 
 The bulk of the application will be found in App.js
