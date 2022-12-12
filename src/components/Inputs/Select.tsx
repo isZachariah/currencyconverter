@@ -1,22 +1,18 @@
 import {useState} from "react";
 import styles from '../../styles/select.module.css';
 import '/node_modules/currency-flags/dist/currency-flags.css';
+import type {CurrencySymbol} from "../../pages/api/symbols";
 
-
-export type SelectOption = {
-    label: string,
-    value: string,
-    symbol: string,
-}
 
 type SelectProps = {
-    options: SelectOption[]
-    value?: SelectOption
-    onChange: (value: SelectOption | undefined) => void
+    id: string
+    options: CurrencySymbol[] | undefined
+    value?: CurrencySymbol
+    onChange: (value: CurrencySymbol | undefined) => void
 }
 
 
-export function Select({value, onChange, options}: SelectProps) {
+export function Select({id, value, onChange, options}: SelectProps) {
     const [isOpen, setIsOpen] = useState(false)
     const [highLightedIndex, setHighlightedIndex] = useState(0)
 
@@ -24,11 +20,11 @@ export function Select({value, onChange, options}: SelectProps) {
         onChange(undefined)
     }
 
-    function selectOption(option: SelectOption) {
+    function selectOption(option: CurrencySymbol) {
         onChange(option)
     }
 
-    function isOptionSelected(option: SelectOption) {
+    function isOptionSelected(option: CurrencySymbol) {
         return option === value
     }
 
@@ -38,12 +34,9 @@ export function Select({value, onChange, options}: SelectProps) {
             onClick={() => setIsOpen(prev => !prev)} tabIndex={0}
             className={`${styles.container} rounded border-gray-700 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50`}>
             <div className={'flex flex-row gap-1 w-full gap-1 '}>
-
                 <div className={`currency-flag currency-flag-${value?.value.toLowerCase()} text-center m-auto`}/>
                 <span className={`${styles.value} `}>{`${value?.value} - ${value?.label}`}</span>
             </div>
-
-
             <button
                 onClick={(e) => {
                     e.stopPropagation()
@@ -54,13 +47,15 @@ export function Select({value, onChange, options}: SelectProps) {
             <div className={`${styles.divider}`}></div>
             <div className={styles.caret}></div>
             <ul className={`${styles.options} ${isOpen ? styles.show : ''}`}>{
-                options.map((option, index) => (
+                options?.map((option, index) => (
                     <li
                         onClick={e => {
                             e.stopPropagation()
                             selectOption(option)
                             setIsOpen(false)
                         }}
+                        id={id}
+                        value={option.value}
                         onMouseEnter={() => setHighlightedIndex(index)}
                         key={option.value}
                         className={`${styles.option} ${isOptionSelected(option) ? styles.selected : ''}`}>{

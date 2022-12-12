@@ -12,10 +12,10 @@ const Navbar = () => {
                 <nav className='flex flex-col justify-center align-center'>
                     <ul className='flex flex-row justify-between align-middle m-0 p-0 gap-x-12'>
                         <li>
-                            <Link href={'currency?tab=send'} className='text-lg hover:text-gray-300'>Send Money</Link>
+                            <Link href={'/currency/send'} className='text-lg hover:text-gray-300'>Send Money</Link>
                         </li>
                         <li>
-                            <Link href={'/currency?tab=convert'} className='text-lg hover:text-gray-300'>Converter</Link>
+                            <Link href={'/currency/convert'} className='text-lg hover:text-gray-300'>Converter</Link>
                         </li>
                         <li>
                             <Link href={'/currency-api'} className='text-lg hover:text-gray-300'>Currency API</Link>

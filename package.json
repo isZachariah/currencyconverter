@@ -1,13 +1,11 @@
 {
   "name": "currency-converter",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "serve": "NODE_ENV=production node server.mjs",
-    "buildAll": "npm run build:client && npm run build:server",
-    "build:client": "tsc && next build --outDir dist/client",
-    "build:server": "tsc && next build --ssr src/entry-server.tsx --outDir dist/server",
+    "buildAll": "npm run tsc && next build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,6 +19,8 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
+    "@tanstack/react-query": "^4.19.1",
+    "@tanstack/react-query-devtools": "^4.19.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
@@ -33,9 +33,7 @@
     "next": "13.0.2",
     "path": "^0.12.7",
     "react": "18.2.0",
-    "react-currency-flags": "^0.1.2",
     "react-dom": "18.2.0",
-    "react-select": "^5.6.0",
     "sirv": "^2.0.2"
   },
   "devDependencies": {
