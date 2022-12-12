@@ -1,0 +1,14 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/api/convert": "pages/api/convert.js",
+  "/404": "pages/404.html",
+  "/api/symbols": "pages/api/symbols.js",
+  "/currency/alerts": "pages/currency/alerts.html",
+  "/currency/charts": "pages/currency/charts.html",
+  "/currency/convert": "pages/currency/convert.html",
+  "/currency": "pages/currency.html",
+  "/currency/send": "pages/currency/send.html",
+  "/": "pages/index.js",
+  "/_document": "pages/_document.js"
+}
